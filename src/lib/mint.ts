@@ -2,7 +2,7 @@ import { Connection, PublicKey, SystemProgram, Transaction } from "@solana/web3.
 import type { WalletContextState } from "@solana/wallet-adapter-react";
 
 // Treasury wallet (your wallet that collects 0.03 SOL)
-const TREASURY_WALLET = new PublicKey("CsFUNNsBz9M8XR2aM2HcWNJcnQyNujAPdFkJiunWo5wD");
+const TREASURY_WALLET = new PublicKey("g4zDu4DpNGrmDtkBxKnGbrfnPNjoJM94KkkkWHnzTVB");
 
 // Solana Devnet endpoint
 const connection = new Connection("https://api.devnet.solana.com");
