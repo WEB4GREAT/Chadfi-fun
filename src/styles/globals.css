@@ -1,0 +1,274 @@
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #0d0d0d;
+  color: #b0ffb0;
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Subtle background grid effect */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+}
+
+/* ===== Navbar ===== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav span {
+  color: #00ff7f;
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.desktop-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.desktop-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.desktop-menu a:first-child {
+  color: #00ff7f;
+  font-weight: 600;
+}
+
+/* Hamburger toggle */
+.hamburger {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #00ff7f;
+  display: none;
+}
+
+/* Mobile floating menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.95);
+  border-left: 1px solid #00ff7f;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  z-index: 200;
+}
+
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.mobile-menu a:first-child {
+  color: #00ff7f;
+  font-weight: 600;
+}
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none !important;
+  }
+  .hamburger {
+    display: block !important;
+  }
+}
+
+/* ===== Hero Section ===== */
+.hero-section {
+  text-align: center;
+  padding: 5rem 1rem 3rem;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  color: #32cd32;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #a0ff9f;
+  margin-bottom: 2rem;
+}
+
+/* ===== Buttons ===== */
+button,
+.generate-btn,
+.mint-btn {
+  background-color: #32cd32;
+  color: #121212;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+}
+
+button:disabled,
+.generate-btn:disabled,
+.mint-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== Coin Card (Compact Glass Box) ===== */
+.coin-card {
+  background: rgba(20, 20, 20, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(50, 255, 50, 0.2);
+  border-radius: 0.8rem;
+  padding: 1.2rem 1.5rem;
+  color: #d8ffd8;
+  text-align: center;
+
+  max-width: 320px;
+  margin: 1.5rem auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.coin-info h2.coin-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #00ff88;
+  margin-bottom: 0.4rem;
+}
+
+.coin-symbol {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #aaffcc;
+  margin-bottom: 0.6rem;
+}
+
+.coin-description {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #bfffbf;
+}
+
+/* ===== Info Section (Mini Cards) ===== */
+.info-section {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 3rem 1rem;
+}
+
+.mini-card {
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(50, 255, 50, 0.2);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  width: 250px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.mini-card h3 {
+  color: #32cd32;
+  margin-bottom: 0.8rem;
+}
+
+.coming-soon {
+  color: #a0ff9f;
+  font-weight: bold;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: rgba(18, 18, 18, 0.9);
+  color: #b0ffb0;
+  padding: 2rem 3rem 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #32cd32;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-section h4 {
+  margin-bottom: 0.5rem;
+  color: #32cd32;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin: 0.3rem 0;
+}
+
+.social-icons a {
+  color: #32cd32;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  color: #80ff80;
+}
+
+/* ===== Loading / Error Text ===== */
+.loading-text,
+.error-text {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #32cd32;
+}
+
+.error-text {
+  color: #ff5c5c;
+}
